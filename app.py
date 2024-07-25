@@ -6,6 +6,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 
 app = Dash()
 
+server = app.server  # Expose the Flask server for Gunicorn to interface with
+
 app.layout = [
     html.H1(children='El Condor: Hello world', style={'textAlign':'center'}),
     dcc.Dropdown(df.country.unique(), 'Canada', id='dropdown-selection'),
